@@ -53,13 +53,16 @@ color: var(--darkColor);
 header{
     position: relative;
 }
-.subText ,footer .data .group ul li{
+.subText ,footer .data .group ul a{
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0px;
     color: var(--grayColor);
 } 
+footer .data .group ul a{
+    color: white;
+}
 .arrow a{
 color: var(--mainColor);
 font-weight: 600;
@@ -89,6 +92,7 @@ margin-right: 8px;
     padding: 12px 34px;
     border: none;
     border-radius: 109px;
+    cursor: pointer;
     }
 /* navbar */
 
@@ -187,18 +191,18 @@ nav .icon {
 
 /* home section */
 header{
-    background-image: url(../images/solar-panels-meadow1.png);
+   background: linear-gradient(267.36deg, rgba(0, 0, 0, 0.7) 2.2%, rgba(0, 0, 0, 0.182) 58.17%) ,url(../images/solar-panels-meadow1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height:650px;
-    color: white; 
-    display: flex;  
+    display: flex;
     align-items: center;
 }
 .home{
     display: grid;
-    gap: 155px;
+    gap: 120px;
+    color: white;
 }
 .home .group span:nth-child(2){
     border: 3.75px solid rgba(255, 255, 255, 1);
@@ -250,10 +254,14 @@ margin-right: 24px;
     .btn2{
         margin-top:15px;
     }
+    header{
+        align-items: start;
+        margin-top: 0px;
+    }
 }
 @media (max-width: 576px){
     .home{
-        gap: 80px;
+        gap: 70px;
     }
     .home .group span:nth-child(2){
         width: 50px;
@@ -591,6 +599,7 @@ letter-spacing: 0%;
 .comments .slider .part2 .arrows{
     display: flex;
     gap: 16px;
+    cursor: pointer;
 }
 .comments .slider .part2 .arrows .next{
     width: 48px;
@@ -609,77 +618,81 @@ letter-spacing: 0%;
     }
 }
 /* Footer */
-
-footer{
+footer {
     background: #283646;
 }
-.footer{
+.footer {
     display: grid;
     gap: 54px;
 }
-footer .data{
+footer .data {
     display: flex;
     justify-content: space-between;
     align-items: end;
-} 
-footer .data .group{
+}
+footer .data .group {
     display: grid;
     gap: 38px;
 }
-footer .data .group ul{
+footer .data .group ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
 }
-footer .data .group1 p{
-padding-bottom: 8px;
+footer .data .group1 p {
+    padding-bottom: 8px;
 }
-footer .data .group ul li ,footer .data .group1 p{
+footer .data .group ul li,
+footer .data .group1 p {
     color: white;
 }
-.subscribe-container{
-   display: flex;
+.subscribe-container {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     background: #FFFFFF17;
     border-radius: 38px;
     border: 1px solid #B3BDC7;
-  }
+    max-width: 100%;
+}
 .email-input {
+    flex: 1;
+    min-width: 0;
     border: none;
     background: transparent;
     color: #fff;
     padding: 6px 8px;
     font-size: 16px;
     outline: none;
+    max-width: 100%;
 }
-.email-input::placeholder{
+.email-input::placeholder {
     color: #aaa;
 }
-.subscribe-container .btn{
+.subscribe-container .btn {
     background: #FFBB1C;
     color: white;
 }
-.line{
-    border: 1px solid #71777D
+.line {
+    border: 1px solid #71777D;
 }
-.copyRight{
+.copyRight {
     display: flex;
     justify-content: space-between;
-color: #92989F;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-letter-spacing: 0.26px;
+    color: #92989F;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.26px;
 }
-
-@media (max-width: 992px){
-    footer .data{
+@media (max-width: 992px) {
+    footer .data {
         display: block;
     }
-    footer .data .group1{
+    footer .data .group1 {
         padding-top: 38px;
     }
-    footer .data .group ul{
+    footer .data .group ul {
         gap: 20px;
     }
 }
@@ -688,8 +701,19 @@ letter-spacing: 0.26px;
         flex-direction: column;
         gap: 20px;
     }
+    .subscribe-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .email-input {
+        flex: 1;
+        min-width: 0;
+    }
     .subscribe-container .btn {
         padding: 6px 12px;
-        font-size: 12px; 
+        font-size: 12px;
+    }
+    footer .data .group ul {
+        gap: 10px;
     }
 }
